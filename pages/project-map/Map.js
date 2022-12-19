@@ -5,7 +5,7 @@ import {
     GoogleMap,
     InfoWindow,
     LoadScript,
-    Marker,
+    MarkerF,
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyle";
 import { default as finalData } from "./finalData.json";
@@ -21,6 +21,7 @@ const options = [
 const api1 = "AIzaSyA8A62BrXcmfsbDGWj9KfM3CXtCOh3QFho";
 const api2 = "AIzaSyACEr9LghZDPPVbV2Y5rMzpRlEQthKw068";
 const api3 = "AIzaSyCwGiisx0jEMdbYUq5HM68Vu0hi3XcIZ94";
+const api4 = 'AIzaSyDt9IIsFpS3H9Efjgkoh87zD3onXnTDWVw';
 
 function MyComponent() {
     const [isMounted, setIsMounted] = useState(false);
@@ -44,7 +45,7 @@ function MyComponent() {
                             lat: 23.729211164246585,
                             lng: 90.40874895549243,
                         }}
-                        zoom={11}
+                        zoom={10}
                         defaultOptions={{ styles: mapStyles }}
                     >
                         {isMounted &&
@@ -62,7 +63,7 @@ function MyComponent() {
                                 ];
                                 each.location_coordinates.map((x, id) => {
                                     return (
-                                        <Marker
+                                        <MarkerF
                                             key={idx * 10 + id}
                                             position={{
                                                 lat: x.lat,
